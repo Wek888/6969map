@@ -22,11 +22,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('background.png');
             background-size: cover; /* Заполняет весь экран */
             background-position: center; /* Центрирует изображение */
             filter: blur(5px); /* Размытие фона */
             z-index: 0; /* Позади контейнера */
+            transition: background-image 1s ease; /* Плавный переход между изображениями */
         }
         .container {
             position: relative; /* Относительное позиционирование */
@@ -79,16 +79,35 @@
     </style>
 </head>
 <body>
-    <div class="background"></div> <!-- Элемент для фона -->
+    <div class="background" id="background"></div> <!-- Элемент для фона -->
     <div class="container">
         <a href="https://t.me/minecraft6969news" target="_blank" class="telegram-button">
-    <img src="Telegram.png" alt="Telegram Logo">
-</a>
+            <img src="Telegram.png" alt="Telegram Logo">
+        </a>
 
         <img src="Site-logo.webp" alt="Значок" class="icon">
         <h1>Карта сервера в реальном времени</h1>
         <p>Нажмите на кнопку ниже, чтобы открыть её.</p>
         <a href="http://6969.рф:25566" class="button">Перейти</a>
     </div>
-</body>
-</html>
+
+    <script>
+        const backgrounds = [
+            'background1.png', // Замените на ваши изображения
+            'background2.png',
+            'background3.png'
+        ];
+
+        let currentIndex = 0;
+
+        function changeBackground() {
+            currentIndex = (currentIndex + 1) % backgrounds.length;
+            document.getElementById('background').style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+        }
+
+        // Устанавливаем начальный
+        document.getElementById('background').style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+
+    // Меняем фон каждые 5 секунд
+    setInterval(changeBackground, 5000);
+</script>
