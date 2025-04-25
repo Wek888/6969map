@@ -53,11 +53,38 @@
         .button:hover {
             background-color: #0056b3;
         }
+        .telegram-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white; /* Цвет фона кнопки */
+            border-radius: 50%; /* Закругленные углы для круглой кнопки */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень */
+            overflow: hidden; /* Скрыть лишнее */
+            width: 50px; /* Ширина кнопки */
+            height: 50px; /* Высота кнопки */
+            display: flex; /* Центрирование содержимого */
+            align-items: center; /* Вертикальное центрирование */
+            justify-content: center; /* Горизонтальное центрирование */
+        }
+
+        .telegram-button img {
+            width: 50px; /* Ширина логотипа */
+            height: 50px; /* Высота логотипа */
+        }
+
+        .telegram-button:hover {
+            background-color: #e0e0e0; /* Цвет при наведении */
+        }
     </style>
 </head>
 <body>
     <div class="background"></div> <!-- Элемент для фона -->
     <div class="container">
+        <a href="https://t.me/minecraft6969news" target="_blank" class="telegram-button">
+    <img src="Telegram.png" alt="Telegram Logo">
+</a>
+
         <img src="Site-logo.webp" alt="Значок" class="icon">
         <h1>Карта сервера в реальном времени</h1>
         <p>Нажмите на кнопку ниже, чтобы открыть её.</p>
@@ -65,4 +92,3 @@
     </div>
 </body>
 </html>
-
